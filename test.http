@@ -1,0 +1,2 @@
+GET https://api.openweathermap.org/data/2.5/forecast?q=chicago&appid=600cad142995d30097e255c0dc0c8f57
+
