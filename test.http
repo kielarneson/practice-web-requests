@@ -1,1 +1,1 @@
-GET https://api.openweathermap.org/data/2.5/forecast?q=chicago&appid={{$processEnv OPEN_WEATHER_API_KEY}}
+GET https://api.openweathermap.org/data/2.5/forecast?q=chicago&units=imperial&appid={{$processEnv OPEN_WEATHER_API_KEY}}
