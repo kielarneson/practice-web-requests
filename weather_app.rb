@@ -4,7 +4,7 @@ require "http"
 #{ENV["OPEN_WEATHER_API_KEY"]}
 
 # Accessing openweathermap.org
-response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=chicago&units=imperial&appid=")
+response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=miami&units=imperial&appid=")
 # Parsing weather data
 weather_data = JSON.parse(response.body)
 
@@ -14,8 +14,9 @@ weather_data = JSON.parse(response.body)
 # Empty arrays for averages
 temp_array = []
 real_feel_array = []
+city = ["miami"]
 
-puts "YOUR 5 DAY FORECAST FOR CHICAGO:"
+puts "YOUR 5 DAY FORECAST FOR #{city[0].upcase}:"
 puts ""
 
 # Loop to display 5 day forecast elements
@@ -33,7 +34,7 @@ while index < weather_data["list"].length
   real_feel_array << weather_data["list"][index]["main"]["feels_like"]
 
   # Printing 5 day forecast elements
-  puts "On #{date} at #{time}, the temperature in Chicago will be #{temp} degrees with #{humidity}% humidity."
+  puts "On #{date} at #{time}, the temperature in #{city[0].capitalize} will be #{temp} degrees with #{humidity}% humidity."
   puts "The real-feel temperature will be #{feels_like} degrees."
   puts ""
 
