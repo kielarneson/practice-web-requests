@@ -26,6 +26,7 @@ while index < weather_data["list"].length
   date = weather_data["list"][index]["dt_txt"].slice(0..9)
   time = weather_data["list"][index]["dt_txt"].slice(11..)
   temp = weather_data["list"][index]["main"]["temp"]
+  wind = weather_data["list"][index]["wind"]["speed"]
   feels_like = weather_data["list"][index]["main"]["feels_like"]
   humidity = weather_data["list"][index]["main"]["humidity"]
 
@@ -34,7 +35,7 @@ while index < weather_data["list"].length
   real_feel_array << weather_data["list"][index]["main"]["feels_like"]
 
   # Printing 5 day forecast elements
-  puts "On #{date} at #{time}, the temperature in #{city[0].capitalize} will be #{temp} degrees with #{humidity}% humidity."
+  puts "On #{date} at #{time}, the temperature in #{city[0].capitalize} will be #{temp} degrees with #{humidity}% humidity and a wind speed of #{wind}mph."
   puts "The real-feel temperature will be #{feels_like} degrees."
   puts ""
 
