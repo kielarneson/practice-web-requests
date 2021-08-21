@@ -28,6 +28,6 @@ while city_index < city.length
   index = 0
   city_index += 1
 
-  response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=#{city[city_index]}&units=imperial&appid=git ")
+  response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=#{city[city_index]}&units=imperial&appid=")
   weather_data = JSON.parse(response.body)
 end
