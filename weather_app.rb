@@ -1,10 +1,10 @@
 require "http"
 
-# Environmet API Key storage
+# Environment API Key storage
 #{ENV["OPEN_WEATHER_API_KEY"]}
 
 # Accessing openweathermap.org
-response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=miami&units=imperial&appid=")
+response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=chicago&units=imperial&appid=")
 # Parsing weather data
 weather_data = JSON.parse(response.body)
 
@@ -14,7 +14,7 @@ weather_data = JSON.parse(response.body)
 # Empty arrays for averages
 temp_array = []
 real_feel_array = []
-city = ["miami"]
+city = ["chicago"]
 
 puts "YOUR 5 DAY FORECAST FOR #{city[0].upcase}:"
 puts ""
