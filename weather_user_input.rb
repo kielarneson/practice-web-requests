@@ -7,7 +7,7 @@ while true
   if city == "done"
     break
   else
-    response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=#{city}&units=imperial&appid=")
+    response = HTTP.get("https://api.openweathermap.org/data/2.5/forecast?q=#{city}&units=imperial&appid=#{ENV["OPEN_WEATHER_API_KEY"]}")
     weather_data = JSON.parse(response.body)
 
     puts ""
